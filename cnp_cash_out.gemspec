@@ -5,7 +5,7 @@ require 'cnp_cash_out/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'cnp_cash_out'
-  spec.version       = CnpOneClick::VERSION
+  spec.version       = CnpCashOut::VERSION
   spec.authors       = ['Pavel Tkachenko']
   spec.email         = ['tpepost@gmail.com']
 
