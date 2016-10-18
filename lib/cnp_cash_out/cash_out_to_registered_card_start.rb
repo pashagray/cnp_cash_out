@@ -43,7 +43,7 @@ module CnpCashOut
     end
 
     def hash_to_send
-      PERMITTED_PARAMS.delete_if { |k, v| FUNDING_PARAMS.include?(k) }.map { |p| [p, send(p)] }.to_h
+      PERMITTED_PARAMS.reject { |k, v| FUNDING_PARAMS.include?(k) }.map { |p| [p, send(p)] }.to_h
     end
 
     def request!
