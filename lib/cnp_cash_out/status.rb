@@ -3,8 +3,8 @@ require 'savon'
 module CnpCashOut
   class Status
 
-    PERMITTED_PARAMS = %i(merchant_id merchant_keyword reference_nr wsdl endpoint)
-    REQUIRED_PARAMS  = %i(merchant_id merchant_keyword reference_nr wsdl endpoint)
+    PERMITTED_PARAMS = %i(merchant_id reference_nr merchant_keyword wsdl endpoint)
+    REQUIRED_PARAMS  = %i(merchant_id reference_nr merchant_keyword wsdl endpoint)
     RESPONSE_PARAMS  = %i(transaction_status transaction_currency_code amount
                           additional_information auth_code merchant_local_date_time
                           card_issuer_country masked_card_number user_ip_address
@@ -34,7 +34,7 @@ module CnpCashOut
     end
 
     def request!
-      client = Savon.client(wsdl: wsdl, soap_version: 2, endpoint: endpoint)
+      client = Savon.client(wsdl: wsdl, soap_version: 2, endpoint: endpoint, log: true)
       request = client.call(:get_cash_out_transaction_status, message: hash_to_send )
       response(request.body[:get_cash_out_transaction_status_response][:return])
     end
