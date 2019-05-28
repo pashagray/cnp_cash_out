@@ -19,7 +19,7 @@ module CnpCashOut
                  .select { |p| PERMITTED_PARAMS.include?(p) }
                  .each { |p| instance_variable_set("@#{p[0]}", p[1])}
       if missing_params.any?
-        raise StandardError, "#{missing_params} is required, but not set"
+        raise StandardError, "#{missing_params.sort} is required, but not set"
       else
         request!
       end
