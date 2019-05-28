@@ -4,10 +4,10 @@ module CnpCashOut
         PERMITTED_PARAMS = %i(merchant_id merchant_keyword customer_reference tran_amount
                               currency_code language_code description user_id card_id
                               additional_information_list return_u_r_l
-                              user_login merchant_local_date_time receiver_account card_number receiver_name masked_сard_number sender_name wsdl endpoint)
+                              user_login merchant_local_date_time receiver_name sender_name wsdl endpoint)
         REQUIRED_PARAMS  = %i(merchant_id merchant_keyword tran_amount currency_code language_code
                               return_u_r_l merchant_local_date_time user_id card_id
-                              user_login receiver_account card_number receiver_name sender_name wsdl endpoint)
+                              user_login receiver_name sender_name wsdl endpoint)
         FUNDING_PARAMS   = %i(user_id card_id user_login)
         RESPONSE_PARAMS  = %i(success redirect_url rsp_code error_description customer_reference)
 
