@@ -7,7 +7,7 @@ describe CnpCashOut::Status do
     before do
 
       CnpCashOut.configure(
-        merchant_id: '777000000000018',
+        merchant_id: '000000000000097',
         language_code: 'en',
         currency_code: 398,
         wsdl: 'spec/CNPMerchantWebService.wsdl',
@@ -25,7 +25,7 @@ describe CnpCashOut::Status do
 
     context 'when all required params are presented' do
       it 'returns url for registration new card' do
-        expect(described_class.new(reference_nr: 1, merchant_keyword: 111).transaction_status).to eq('NO_SUCH_TRANSACTION')
+        expect(described_class.new(reference_nr: 156413354845, merchant_keyword: 111).transaction_status).to eq('NO_SUCH_TRANSACTION')
       end
     end
   end
